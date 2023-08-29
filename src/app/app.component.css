@@ -1,0 +1,58 @@
+/*---------------------------------------------
+// Fichier: app.component.css
+// Développeur: Jean-Simon Barbeau
+// Date: 2022-09-28
+// Fonction: Faire le CSS de app.component.html
+----------------------------------------------*/
+
+body{
+    background-color: black;
+}
+
+hr{
+    margin-right: 10px;
+}
+
+label{
+    flex-wrap: wrap;
+}
+
+.citation{
+    background-color: #00203FFF ;
+    color: #ADEFD1FF;
+}
+
+.button{
+    margin: 5px;
+    width: 75px;
+}
+
+.card {
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card-text {
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    color: #97BC62FF;
+    height: 75px;
+    width: 75px;
+}
+
+.true-primary{
+    background-color: #ffffff
+}
+
+.false-primary{
+    background-color: #000000;
+    color: #000000;
+}
+
+.citation-primary{
+    color: #ADEFD1FF;
+    background-color: #ffffff
+}

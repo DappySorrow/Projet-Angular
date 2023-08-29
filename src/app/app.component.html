@@ -1,0 +1,151 @@
+<!---------------------------------------------
+Fichier: app.component.html
+Développeur: Jean-Simon Barbeau
+Date: 2022-09-28
+Fonction: Le côté visible du web
+--------------------------------------------->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA CITATION MYSTÈRE</title>
+</head>
+
+<body>
+  <div class="row citation" style="text-align: center;">
+    <h1 style="margin: 5px;">Citation secrète</h1>
+    <h2 style="margin: 5px;">par Jean-Simon Barbeau</h2>
+  </div>
+
+  <!-- ------------------------------------------------ -->
+
+  <div *ngIf="!visible" class="row citation" style="margin-top:5px;">
+    <section>
+      <h3 style="margin: 5px;">Entrez votre citation ici:</h3>
+      <textarea [(ngModel)]="citation" style="margin: 5px;" type="text" maxlength="100" class="col-10"></textarea>
+      <button style="margin-bottom: 5px;" class="col-1 button" (click)="regarderCitation()">Traiter</button>
+    </section>
+  </div>
+
+  <!-- ------------------------------------------------ -->
+  
+  <div *ngIf="visible" class="row citation" style="margin-top:5px;">
+    <section style="margin: 5px;">
+      <!-- Grille Supérieure -->
+      <label *ngFor="let lettre of grilleSup1;">
+        <div class="card-body">
+          <label *ngIf="lettre !== ' '" class="card-text card citation-primary" style="margin:5px;">{{lettre}}</label>
+          <label *ngIf="lettre == ' '" class="card-text card false-primary" style="margin:5px;">_</label>
+        </div>
+      </label>
+
+      <br>
+
+      <label *ngFor="let lettre of grilleSup2;">
+        <div class="card-body">
+          <label *ngIf="lettre !== ' '" class="card-text card citation-primary" style="margin:5px;">{{lettre}}</label>
+          <label *ngIf="lettre == ' '" class="card-text card false-primary" style="margin:5px;">_</label>
+        </div>
+      </label>
+
+      <br>
+
+      <label *ngFor="let lettre of grilleSup3;">
+        <div class="card-body">
+          <label *ngIf="lettre !== ' '" class="card-text card citation-primary" style="margin:5px;">{{lettre}}</label>
+          <label *ngIf="lettre == ' '" class="card-text card false-primary" style="margin:5px;">_</label>
+        </div>
+      </label>
+
+      <br>
+
+      <label *ngFor="let lettre of grilleSup4;">
+        <div class="card-body">
+          <label *ngIf="lettre !== ' '" class="card-text card citation-primary" style="margin:5px;">{{lettre}}</label>
+          <label *ngIf="lettre == ' '" class="card-text card false-primary" style="margin:5px;">_</label>
+        </div>
+      </label>
+
+      <br>
+
+      <label *ngFor="let lettre of grilleSup5;">
+        <div class="card-body">
+          <label *ngIf="lettre !== ' '" class="card-text card citation-primary" style="margin:5px;">{{lettre}}</label>
+          <label *ngIf="lettre == ' '" class="card-text card false-primary" style="margin:5px;">_</label>
+        </div>
+      </label>
+
+      <br>
+
+      <label *ngFor="let lettre of grilleSup6;">
+        <div class="card-body">
+          <label *ngIf="lettre !== ' '" class="card-text card citation-primary" style="margin:5px;">{{lettre}}</label>
+          <label *ngIf="lettre == ' '" class="card-text card false-primary" style="margin:5px;">_</label>
+        </div>
+      </label>
+
+      <hr>
+
+      <!-- Grille Inférieure -->
+      <label *ngFor="let uneCase of grilleInf1;">
+        <label *ngIf="uneCase" class="card true-primary" style="margin:5px;"></label>
+        <label *ngIf="!uneCase" class="card false-primary" style="margin:5px;"></label>
+      </label>
+
+      <br>
+
+      <label *ngFor="let uneCase of grilleInf2;">
+        <label *ngIf="uneCase" class="card true-primary" style="margin:5px;"></label>
+        <label *ngIf="!uneCase" class="card false-primary" style="margin:5px;"></label>
+      </label>
+
+      <br>
+
+      <label *ngFor="let uneCase of grilleInf3;">
+        <label *ngIf="uneCase" class="card true-primary" style="margin:5px;"></label>
+        <label *ngIf="!uneCase" class="card false-primary" style="margin:5px;"></label>
+      </label>
+
+      <br>
+
+      <label *ngFor="let uneCase of grilleInf4;">
+        <label *ngIf="uneCase" class="card true-primary" style="margin:5px;"></label>
+        <label *ngIf="!uneCase" class="card false-primary" style="margin:5px;"></label>
+      </label>
+
+      <br>
+
+      <label *ngFor="let uneCase of grilleInf5;">
+        <label *ngIf="uneCase" class="card true-primary" style="margin:5px;"></label>
+        <label *ngIf="!uneCase" class="card false-primary" style="margin:5px;"></label>
+      </label>
+
+      <br>
+
+      <label *ngFor="let uneCase of grilleInf6;">
+        <label *ngIf="uneCase" class="card true-primary" style="margin:5px;"></label>
+        <label *ngIf="!uneCase" class="card false-primary" style="margin:5px;"></label>
+      </label>
+      <hr>
+
+      <article class="row" style="margin-bottom:15px;">
+        <span class="col-4"></span>
+        <button class="col-2" (click)="voirCitation()">Voir la citation</button>
+        <button class="col-2" (click)="recommencer()">Recommencer</button>
+        <span class="col-4"></span>
+      </article>
+    </section>
+  </div>
+
+  <!-- ------------------------------------------------ -->
+
+  <div *ngIf="reponse" class="row citation" style="margin-top:5px; text-align: center;">
+    <label>La citation: {{citation}}</label>
+  </div>
+
+</body>
+
+</html>
